@@ -71,7 +71,7 @@ body {
   flex-direction: column;
 }
 .hero-title {
-  margin-left: 100px;
+  margin-left: 125px;
   position: absolute;
   z-index: 3;
 }
@@ -79,7 +79,7 @@ body {
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 5em;
+  font-size: 5.4em;
   color: $main;
 }
 .harvey-desc {
@@ -97,7 +97,7 @@ body {
   height: 85%;
   right: 0;
   bottom: 0;
-  background: rgba($peach, .9);
+  background: rgba($main, .4);
 }
 
 .hero-icon {
