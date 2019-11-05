@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,700|Playfair+Display:400,700,900");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500,700|Playfair+Display:400,700,900");
+/*potential colors*/
 body {
-  margin: 0;
-  font-family: "IBM Plex Sans", sans-serif; }
+  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0; }
 
 a {
   text-decoration: none; }
@@ -14,19 +15,24 @@ em {
 
 #navbar {
   width: 100%;
-  background: rgba(255, 253, 252, 0.5);
+  background: #f7f4f3;
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center; }
   #navbar a {
     font-family: "IBM Plex Sans", sans-serif;
-    margin: 0 5%;
-    padding: 15px;
-    color: #8BB5F4;
+    margin: 0 8%;
+    color: #98a9d3;
     letter-spacing: 3px;
-    font-size: 0.8em;
-    text-transform: uppercase; }
+    font-size: 0.85em;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid rgba(219, 179, 177, 0); }
+    #navbar a:hover {
+      color: #DBB3B1;
+      border-bottom: 3px solid #DBB3B1; }
 
 .bottom {
   position: absolute;
@@ -38,48 +44,22 @@ em {
   position: fixed;
   top: 0; }
 
-.landing--container {
-  position: relative;
-  margin: 0;
-  background-image: url("");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 95vh; }
-
-.landing--title {
-  width: 60%;
-  margin-left: 20%;
-  margin-top: 20%; }
-  .landing--title h1 {
-    text-transform: uppercase;
-    font-size: 5em;
-    letter-spacing: 5px;
-    font-family: "Playfair Display", serif;
-    font-weight: 900;
-    color: #8BB5F4;
-    margin: 0; }
-  .landing--title p {
-    margin: -10px 0 40px 0;
-    color: #8BB5F4;
-    font-weight: 300; }
-
-.primary-btn {
+button {
   padding: 15px;
   outline: 0;
   border: none;
   text-transform: uppercase;
   font-family: "IBM Plex Sans", sans-serif;
   letter-spacing: 2px;
-  background: #8BB5F4;
   font-weight: 100;
-  color: #FFFDFC;
   cursor: pointer;
   transition: all 0.3s ease; }
-  .primary-btn:hover {
+  button:hover {
     transform: scale(1.05); }
+
+.primary-btn {
+  background: #F6E7E0;
+  color: #333333; }
 
 .accent-line {
   width: 55px;
@@ -87,18 +67,87 @@ em {
   margin-top: 0;
   margin-left: 2px;
   margin-bottom: 40px;
-  background: #EDD4BA; }
+  background: #BCC7E2; }
 
 section {
   width: 100%;
   height: 100vh; }
 
+.landing--container {
+  position: relative;
+  margin: 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: auto; }
+
+.landing--title {
+  position: absolute;
+  z-index: 2;
+  width: 60%;
+  height: 30%;
+  top: 20%;
+  left: 20%; }
+  .landing--title h1 {
+    text-transform: uppercase;
+    font-size: 5em;
+    letter-spacing: 5px;
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    color: #BCC7E2;
+    margin: 0; }
+  .landing--title p {
+    margin: -10px 0 40px 0;
+    color: #333333;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .8em; }
+
 .color-bg {
-  background: #B7D6F7; }
+  background: #BCC7E2; }
+
+/*homepage grid section*/
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  width: 100%; }
+
+.home-grid-item {
+  border: 1px solid #F6E7E0;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  .home-grid-item h3 {
+    color: #BAB0A9;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+    .home-grid-item h3 em {
+      color: #BCC7E2; }
+    .home-grid-item h3 span {
+      color: #BCC7E2;
+      font-size: 1.4em;
+      font-weight: 100; }
 
 footer {
   height: 20vh;
-  background: #8BB5F4;
+  background: #F7F4F3;
   position: relative;
   width: 100%;
   text-align: center; }
@@ -108,10 +157,10 @@ footer {
   padding-top: 15px; }
   .footer--social i {
     padding: 30px;
-    color: #B7D6F7;
+    color: #BCC7E2;
     transition: all 0.3s ease; }
     .footer--social i:hover {
-      color: #DCC6B6;
+      color: #DBB3B1;
       transition: all 0.3s ease;
       transform: scale(1.3); }
 
@@ -119,20 +168,19 @@ footer {
   width: 100%;
   position: absolute;
   height: 20%;
-  bottom: 0; }
+  bottom: 10px; }
 
 .footer--text {
   font-family: "IBM Plex Sans", sans-serif;
-  font-size: .5em;
-  color: #212121;
+  font-weight: 100;
+  font-size: .6em;
+  color: #333333;
   letter-spacing: 2px;
   text-transform: uppercase; }
-  .footer--text span {
-    color: #FFFDFC; }
   .footer--text a {
     font-family: "Playfair Display", serif;
-    font-style: italic;
-    color: #FFFDFC; }
+    color: #DBB3B1;
+    transition: all 0.3s ease; }
     .footer--text a:hover {
-      background: #DCC6B6;
-      color: #B7D6F7; }
+      background: #BCC7E2;
+      color: #333333; }

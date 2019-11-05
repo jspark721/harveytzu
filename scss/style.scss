@@ -1,23 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,700|Playfair+Display:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500,700|Playfair+Display:400,700,900');
 
 $sans: 'IBM Plex Sans', sans-serif;
 $serif: 'Playfair Display', serif;
 
-$white: #FFFDFC;
-$tan: #DCC6B6;
-$light: #B7D6F7;
-$main: #8BB5F4;
-$secondary: #AB9381;
-$gray: #848280;
-$yellow: #F5C965;
-$peach: #EDD4BA;
-$dark: #212121;
+$white: #F7F4F3;
+$dark: #333333;
+
+$main: #DBD0C7;
+$accent: #BCC7E2;
+$light: #F6E7E0;
+
+$accent-dark: darken($accent, 10%);
+$main-dark: #BAB0A9;
+
+/*potential colors*/
+$pink: #DBB3B1;
+$green: #A9BAAC;
 
 $ease: all .3s ease;
 
 body {
-  margin: 0;
   font-family: $sans;
+  margin: 0;
 }
 a {
   text-decoration: none;
@@ -32,19 +36,25 @@ em {
 
 #navbar {
   width: 100%;
-  background: rgba($white, .5);
+  background: rgba($white, 1);
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   a {
     font-family: $sans;
-    margin: 0 5%;
-    padding: 15px;
-    color: $main;
+    margin: 0 8%;
+    color: $accent-dark;
     letter-spacing: 3px;
-    font-size: 0.8em;
+    font-size: 0.85em;
+    font-weight: 500;
     text-transform: uppercase;
+    transition: $ease;
+    border-bottom: 3px solid rgba($pink, 0);
+    &:hover {
+      color: $pink;
+      border-bottom: 3px solid $pink;
+    }
   }
 }
 
@@ -60,54 +70,23 @@ em {
   top: 0;
 }
 
-.landing--container {
-  position: relative;
-  margin: 0;
-  background-image: url('');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 95vh;
-}
-
-.landing--title {
-  width: 60%;
-  margin-left: 20%;
-  margin-top: 20%;
-  h1 {
-    text-transform: uppercase;
-    font-size: 5em;
-    letter-spacing: 5px;
-    font-family: $serif;
-    font-weight: 900;
-    color: $main;
-    margin: 0;
-  }
-  p {
-    margin: -10px 0 40px 0;
-    color: $main;
-    font-weight: 300;
-
-  }
-}
-
-.primary-btn {
+button {
   padding: 15px;
   outline: 0;
   border: none;
   text-transform: uppercase;
   font-family: $sans;
   letter-spacing: 2px;
-  background: $main;
   font-weight: 100;
-  color: $white;
   cursor: pointer;
   transition: $ease;
   &:hover {
     transform: scale(1.05);
   }
+}
+.primary-btn {
+  background: $light;
+  color: $dark;
 }
 
 .accent-line {
@@ -116,7 +95,7 @@ em {
   margin-top: 0;
   margin-left: 2px;
   margin-bottom: 40px;
-  background: $peach;
+  background: $accent;
 }
 
 section {
@@ -124,13 +103,103 @@ section {
   height: 100vh;
 }
 
+.landing--container {
+  position: relative;
+  margin: 0;
+  // background-image: url('../img/harvey1.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+// .overlay {
+//   background-color: rgba($dark, .4);
+//   top: 0;
+//   left: 0;
+//   width: 100vw;
+//   height: 100vh;
+//   position: absolute;
+//   z-index: 0;
+// }
+
+.landing--title {
+  position: absolute;
+  z-index: 2;
+  width: 60%;
+  height: 30%;
+  top: 20%;
+  left: 20%;
+  h1 {
+    text-transform: uppercase;
+    font-size: 5em;
+    letter-spacing: 5px;
+    font-family: $serif;
+    font-weight: 900;
+    color: $accent;
+    margin: 0;
+  }
+  p {
+    margin: -10px 0 40px 0;
+    color: $dark;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .8em;
+  }
+}
+
+
 .color-bg {
-  background: $light;
+  background: $accent;
+}
+
+/*homepage grid section*/
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  width: 100%;
+}
+.home-grid-item {
+  border: 1px solid $light;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h3 {
+    color: $main-dark;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    em {
+      color: $accent;
+    }
+    span {
+      color: $accent;
+      font-size: 1.4em;
+      font-weight: 100;
+    }
+  }
 }
 
 footer {
   height: 20vh;
-  background: $main;
+  background: $white;
   position: relative;
   width: 100%;
   text-align: center;
@@ -140,10 +209,10 @@ footer {
   padding-top: 15px;
   i {
     padding: 30px;
-    color: $light;
+    color: $accent;
     transition: $ease;
     &:hover {
-      color: $tan;
+      color: $pink;
       transition: $ease;
       transform: scale(1.3);
     }
@@ -153,24 +222,22 @@ footer {
   width: 100%;
   position: absolute;
   height: 20%;
-  bottom: 0;
+  bottom: 10px;
 }
 .footer--text {
   font-family: $sans;
-  font-size: .5em;
+  font-weight: 100;
+  font-size: .6em;
   color: $dark;
   letter-spacing: 2px;
   text-transform: uppercase;
-  span {
-    color: $white;
-  }
   a {
     font-family: $serif;
-    font-style: italic;
-    color: $white;
+    color: $pink;
+    transition: $ease;
     &:hover {
-      background: $tan;
-      color: $light;
+      background: $accent;
+      color: $dark;
     }
   }
 }
