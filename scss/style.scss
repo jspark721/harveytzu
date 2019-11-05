@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,300,700|IBM+Plex+Serif:100,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,700|Playfair+Display:400,700,900');
 
 $sans: 'IBM Plex Sans', sans-serif;
-$serif: 'IBM Plex Serif', serif;
+$serif: 'Playfair Display', serif;
 
 $white: #FFFDFC;
 $tan: #DCC6B6;
@@ -11,116 +11,166 @@ $secondary: #AB9381;
 $gray: #848280;
 $yellow: #F5C965;
 $peach: #EDD4BA;
+$dark: #212121;
 
 $ease: all .3s ease;
 
 body {
-  font-family: $sans;
   margin: 0;
+  font-family: $sans;
+}
+a {
+  text-decoration: none;
+}
+
+em {
+  font-family: $serif;
+  font-weight: 100;
+  font-size: .95em;
+  text-transform: lowercase;
 }
 
 #navbar {
-  ul {
-    float: right;
-    margin-top: 35px;
-    margin-right: 25px;
-    margin-bottom: 30px;
-  }
+  width: 100%;
+  background: rgba($white, .5);
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   a {
+    font-family: $sans;
+    margin: 0 5%;
+    padding: 15px;
     color: $main;
-    margin-right: 30px;
-    padding: 5px;
-    font-size: .9em;
-    text-decoration: none;
-    transition: $ease;
-    letter-spacing: 1px;
-    &:hover {
-      color: $peach;
-      border-bottom: 3px solid $peach;
-    }
+    letter-spacing: 3px;
+    font-size: 0.8em;
+    text-transform: uppercase;
   }
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  margin: 0;
 }
 
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%;
 }
 
-.logo {
-  float: left;
-  margin-top: 35px;
-  margin-left: 25px;
-  letter-spacing: 1px;
-  color: $main;
-  text-transform: uppercase;
-  font-weight: 900;
-  span {
-    font-weight: 300;
-    text-transform: lowercase;
-    color: $secondary;
+.landing--container {
+  position: relative;
+  margin: 0;
+  background-image: url('');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 95vh;
+}
+
+.landing--title {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 20%;
+  h1 {
+    text-transform: uppercase;
+    font-size: 5em;
+    letter-spacing: 5px;
     font-family: $serif;
+    font-weight: 900;
+    color: $main;
+    margin: 0;
+  }
+  p {
+    margin: -10px 0 40px 0;
+    color: $main;
+    font-weight: 300;
+
   }
 }
 
-.hero {
+.primary-btn {
+  padding: 15px;
+  outline: 0;
+  border: none;
+  text-transform: uppercase;
+  font-family: $sans;
+  letter-spacing: 2px;
+  background: $main;
+  font-weight: 100;
+  color: $white;
+  cursor: pointer;
+  transition: $ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.accent-line {
+  width: 55px;
+  height: 7px;
+  margin-top: 0;
+  margin-left: 2px;
+  margin-bottom: 40px;
+  background: $yellow;
+}
+
+section {
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.hero-title {
-  margin-left: 125px;
-  position: absolute;
-  z-index: 3;
-}
-.harvey-title {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 5.4em;
-  color: $main;
-}
-.harvey-desc {
-  font-size: 1.3em;
-  font-family: $serif;
-  font-weight: 100;
-  font-style: italic;
-  margin-top: -10px;
-  color: $gray;
 }
 
-.hero-image {
-  position: absolute;
-  width: 63%;
-  height: 85%;
-  right: 0;
-  bottom: 0;
-  background: rgba($main, .4);
+.color-bg {
+  background: $light;
 }
 
-.hero-icon {
-  left: 135px;
-  position: absolute;
-  bottom: 20px;
-  font-size: 0.8em;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: $peach;
+footer {
+  height: 20vh;
+  background: $main;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.footer--social {
+  height: 100px;
+  padding-top: 15px;
   i {
-    font-size: 2em;
-    color: $peach;
-    margin-top: 25px;
-    animation: bounce 1.5s ease-in infinite;
+    padding: 30px;
+    color: $light;
+    transition: $ease;
+    &:hover {
+      color: $tan;
+      transition: $ease;
+      transform: scale(1.3);
+    }
   }
 }
-
-
-/* animation */
-@keyframes bounce {
-  50% {
-     transform: translateY(-5px);
+.footer--bottom {
+  width: 100%;
+  position: absolute;
+  height: 20%;
+  bottom: 0;
+}
+.footer--text {
+  font-family: $sans;
+  font-size: .5em;
+  color: $dark;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  span {
+    color: $white;
+  }
+  a {
+    font-family: $serif;
+    font-style: italic;
+    color: $white;
+    &:hover {
+      background: $tan;
+      color: $light;
+    }
   }
 }

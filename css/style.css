@@ -1,96 +1,138 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,300,700|IBM+Plex+Serif:100,400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,700|Playfair+Display:400,700,900");
 body {
-  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif; }
+
+a {
+  text-decoration: none; }
+
+em {
+  font-family: "Playfair Display", serif;
+  font-weight: 100;
+  font-size: .95em;
+  text-transform: lowercase; }
+
+#navbar {
+  width: 100%;
+  background: rgba(255, 253, 252, 0.5);
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  #navbar a {
+    font-family: "IBM Plex Sans", sans-serif;
+    margin: 0 5%;
+    padding: 15px;
+    color: #8BB5F4;
+    letter-spacing: 3px;
+    font-size: 0.8em;
+    text-transform: uppercase; }
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
   margin: 0; }
-
-#navbar ul {
-  float: right;
-  margin-top: 35px;
-  margin-right: 25px;
-  margin-bottom: 30px; }
-
-#navbar a {
-  color: #8BB5F4;
-  margin-right: 30px;
-  padding: 5px;
-  font-size: .9em;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  letter-spacing: 1px; }
-  #navbar a:hover {
-    color: #EDD4BA;
-    border-bottom: 3px solid #EDD4BA; }
 
 .sticky {
   position: fixed;
-  top: 0;
-  width: 100%; }
+  top: 0; }
 
-.logo {
-  float: left;
-  margin-top: 35px;
-  margin-left: 25px;
-  letter-spacing: 1px;
-  color: #8BB5F4;
-  text-transform: uppercase;
-  font-weight: 900; }
-  .logo span {
-    font-weight: 300;
-    text-transform: lowercase;
-    color: #AB9381;
-    font-family: "IBM Plex Serif", serif; }
-
-.hero {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column; }
-
-.hero-title {
-  margin-left: 125px;
-  position: absolute;
-  z-index: 3; }
-
-.harvey-title {
+.landing--container {
+  position: relative;
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 5.4em;
-  color: #8BB5F4; }
+  background-image: url("");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 95vh; }
 
-.harvey-desc {
-  font-size: 1.3em;
-  font-family: "IBM Plex Serif", serif;
+.landing--title {
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 20%; }
+  .landing--title h1 {
+    text-transform: uppercase;
+    font-size: 5em;
+    letter-spacing: 5px;
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    color: #8BB5F4;
+    margin: 0; }
+  .landing--title p {
+    margin: -10px 0 40px 0;
+    color: #8BB5F4;
+    font-weight: 300; }
+
+.primary-btn {
+  padding: 15px;
+  outline: 0;
+  border: none;
+  text-transform: uppercase;
+  font-family: "IBM Plex Sans", sans-serif;
+  letter-spacing: 2px;
+  background: #8BB5F4;
   font-weight: 100;
-  font-style: italic;
-  margin-top: -10px;
-  color: #848280; }
+  color: #FFFDFC;
+  cursor: pointer;
+  transition: all 0.3s ease; }
+  .primary-btn:hover {
+    transform: scale(1.05); }
 
-.hero-image {
-  position: absolute;
-  width: 63%;
-  height: 85%;
-  right: 0;
-  bottom: 0;
-  background: rgba(139, 181, 244, 0.4); }
+.accent-line {
+  width: 55px;
+  height: 7px;
+  margin-top: 0;
+  margin-left: 2px;
+  margin-bottom: 40px;
+  background: #F5C965; }
 
-.hero-icon {
-  left: 135px;
+section {
+  width: 100%;
+  height: 100vh; }
+
+.color-bg {
+  background: #B7D6F7; }
+
+footer {
+  height: 20vh;
+  background: #8BB5F4;
+  position: relative;
+  width: 100%;
+  text-align: center; }
+
+.footer--social {
+  height: 100px;
+  padding-top: 15px; }
+  .footer--social i {
+    padding: 30px;
+    color: #B7D6F7;
+    transition: all 0.3s ease; }
+    .footer--social i:hover {
+      color: #DCC6B6;
+      transition: all 0.3s ease;
+      transform: scale(1.3); }
+
+.footer--bottom {
+  width: 100%;
   position: absolute;
-  bottom: 20px;
-  font-size: 0.8em;
-  font-weight: 500;
+  height: 20%;
+  bottom: 0; }
+
+.footer--text {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: .5em;
+  color: #212121;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #EDD4BA; }
-  .hero-icon i {
-    font-size: 2em;
-    color: #EDD4BA;
-    margin-top: 25px;
-    animation: bounce 1.5s ease-in infinite; }
-
-/* animation */
-@keyframes bounce {
-  50% {
-    transform: translateY(-5px); } }
+  text-transform: uppercase; }
+  .footer--text span {
+    color: #FFFDFC; }
+  .footer--text a {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: #FFFDFC; }
+    .footer--text a:hover {
+      background: #DCC6B6;
+      color: #B7D6F7; }
