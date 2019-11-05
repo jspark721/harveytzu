@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,300,700|IBM+Plex+Serif:100,400,700&display=swap");
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0; }
+
+#navbar ul {
+  float: right;
+  margin-top: 35px;
+  margin-right: 25px;
+  margin-bottom: 30px; }
+
+#navbar a {
+  color: #8BB5F4;
+  margin-right: 30px;
+  padding: 5px;
+  font-size: .9em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: 1px; }
+  #navbar a:hover {
+    color: #EDD4BA;
+    border-bottom: 3px solid #EDD4BA; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
+.logo {
+  float: left;
+  margin-top: 35px;
+  margin-left: 25px;
+  letter-spacing: 1px;
+  color: #8BB5F4;
+  text-transform: uppercase;
+  font-weight: 900; }
+  .logo span {
+    font-weight: 300;
+    text-transform: lowercase;
+    color: #AB9381;
+    font-family: "IBM Plex Serif", serif; }
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.hero-title {
+  margin-left: 100px;
+  position: absolute;
+  z-index: 3; }
+
+.harvey-title {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 5em;
+  color: #8BB5F4; }
+
+.harvey-desc {
+  font-size: 1.3em;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 100;
+  font-style: italic;
+  margin-top: -10px;
+  color: #848280; }
+
+.hero-image {
+  position: absolute;
+  width: 63%;
+  height: 85%;
+  right: 0;
+  bottom: 0;
+  background: rgba(237, 212, 186, 0.9); }
+
+.hero-icon {
+  left: 135px;
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #EDD4BA; }
+  .hero-icon i {
+    font-size: 2em;
+    color: #EDD4BA;
+    margin-top: 25px;
+    animation: bounce 1.5s ease-in infinite; }
+
+/* animation */
+@keyframes bounce {
+  50% {
+    transform: translateY(-5px); } }
