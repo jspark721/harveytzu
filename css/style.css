@@ -5,7 +5,8 @@ body {
   margin: 0; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #BAB0A9; }
 
 em {
   font-family: "Playfair Display", serif;
@@ -23,10 +24,10 @@ em {
   #navbar a {
     font-family: "IBM Plex Sans", sans-serif;
     margin: 0 8%;
-    color: #98a9d3;
+    color: #333333;
     letter-spacing: 3px;
     font-size: 0.85em;
-    font-weight: 500;
+    font-weight: 300;
     text-transform: uppercase;
     transition: all 0.3s ease;
     border-bottom: 3px solid rgba(219, 179, 177, 0); }
@@ -65,13 +66,14 @@ button {
   width: 55px;
   height: 7px;
   margin-top: 0;
-  margin-left: 2px;
   margin-bottom: 40px;
   background: #BCC7E2; }
 
-section {
-  width: 100%;
-  height: 100vh; }
+.accent-line-center {
+  width: 60px;
+  height: 7px;
+  background: #F6E7E0;
+  justify-self: center; }
 
 .landing--container {
   position: relative;
@@ -82,15 +84,17 @@ section {
   background-size: cover;
   width: 100%;
   height: 100vh;
-  overflow: auto; }
+  overflow: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .landing--title {
-  position: absolute;
-  z-index: 2;
-  width: 60%;
-  height: 30%;
-  top: 20%;
-  left: 20%; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
   .landing--title h1 {
     text-transform: uppercase;
     font-size: 5em;
@@ -107,15 +111,12 @@ section {
     letter-spacing: 1px;
     font-size: .8em; }
 
-.color-bg {
-  background: #BCC7E2; }
-
 /*homepage grid section*/
 .container {
   position: relative;
   margin: 0 auto;
   width: 80%;
-  height: 90%;
+  min-height: 650px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,26 +125,70 @@ section {
 .home-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 50px;
-  width: 100%; }
+  grid-gap: 20px;
+  width: 100%;
+  transition: all 0.3s ease; }
 
 .home-grid-item {
-  border: 1px solid #F6E7E0;
+  background: #FFFFFF;
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease; }
   .home-grid-item h3 {
     color: #BAB0A9;
     text-transform: uppercase;
-    letter-spacing: 2px; }
+    letter-spacing: 2px;
+    font-weight: 400; }
     .home-grid-item h3 em {
       color: #BCC7E2; }
     .home-grid-item h3 span {
       color: #BCC7E2;
       font-size: 1.4em;
       font-weight: 100; }
+  .home-grid-item:hover {
+    transform: scale(1.01);
+    box-shadow: 3px 3px 5px rgba(51, 51, 51, 0.1); }
+
+.home-quote {
+  position: relative;
+  background: #BCC7E2;
+  margin: 0;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .home-quote i {
+    color: #F6E7E0; }
+  .home-quote .fa-quote-right {
+    font-size: 3em; }
+  .home-quote a {
+    transition: all 0.3s ease;
+    color: #F7F4F3;
+    letter-spacing: 2px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 0.9em;
+    margin: 15px 0;
+    text-decoration: underline; }
+    .home-quote a:hover {
+      background: #F7F4F3;
+      color: #BCC7E2; }
+
+.quote {
+  font-family: "Playfair Display", serif;
+  color: #F7F4F3;
+  font-size: 2.5em;
+  font-weight: 200;
+  margin: 0; }
+  .quote span {
+    font-style: italic; }
 
 footer {
   height: 20vh;
@@ -184,3 +229,37 @@ footer {
     .footer--text a:hover {
       background: #BCC7E2;
       color: #333333; }
+
+/*background colors */
+.accent-bg {
+  background: #BCC7E2; }
+
+.light-bg {
+  background: #F6E7E0; }
+  .light-bg .quote, .light-bg a {
+    color: #BAB0A9; }
+  .light-bg i {
+    color: #BCC7E2; }
+
+.white-bg {
+  background: #F7F4F3; }
+
+@media only screen and (max-width: 950px) {
+  .home-grid {
+    grid-gap: 10px; } }
+
+@media only screen and (max-width: 875px) {
+  .container {
+    width: 95%; } }
+
+@media only screen and (max-width: 655px) {
+  .home-grid {
+    margin: 40px 0 100px 0;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px; }
+  .home-grid-item {
+    height: 350px;
+    width: 350px;
+    justify-self: center; }
+  .accent-line-center {
+    display: none; } }

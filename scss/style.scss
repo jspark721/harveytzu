@@ -25,6 +25,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: $main-dark;
 }
 
 em {
@@ -44,10 +45,10 @@ em {
   a {
     font-family: $sans;
     margin: 0 8%;
-    color: $accent-dark;
+    color: $dark;
     letter-spacing: 3px;
     font-size: 0.85em;
-    font-weight: 500;
+    font-weight: 300;
     text-transform: uppercase;
     transition: $ease;
     border-bottom: 3px solid rgba($pink, 0);
@@ -93,14 +94,14 @@ button {
   width: 55px;
   height: 7px;
   margin-top: 0;
-  margin-left: 2px;
   margin-bottom: 40px;
   background: $accent;
 }
-
-section {
-  width: 100%;
-  height: 100vh;
+.accent-line-center {
+  width: 60px;
+  height: 7px;
+  background: $light;
+  justify-self: center;
 }
 
 .landing--container {
@@ -114,6 +115,10 @@ section {
   width: 100%;
   height: 100vh;
   overflow: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // .overlay {
@@ -127,12 +132,10 @@ section {
 // }
 
 .landing--title {
-  position: absolute;
-  z-index: 2;
-  width: 60%;
-  height: 30%;
-  top: 20%;
-  left: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   h1 {
     text-transform: uppercase;
     font-size: 5em;
@@ -152,17 +155,12 @@ section {
   }
 }
 
-
-.color-bg {
-  background: $accent;
-}
-
 /*homepage grid section*/
 .container {
   position: relative;
   margin: 0 auto;
   width: 80%;
-  height: 90%;
+  min-height: 650px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,20 +170,24 @@ section {
 .home-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 50px;
+  grid-gap: 20px;
   width: 100%;
+  transition: $ease;
 }
 .home-grid-item {
-  border: 1px solid $light;
+  background: #FFFFFF;
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  cursor: pointer;
+  transition: $ease;
   h3 {
     color: $main-dark;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: 400;
     em {
       color: $accent;
     }
@@ -194,6 +196,53 @@ section {
       font-size: 1.4em;
       font-weight: 100;
     }
+  }
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: 3px 3px 5px rgba($dark, .1);
+  }
+}
+
+.home-quote {
+  position: relative;
+  background: $accent;
+  margin: 0;
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  i {
+    color: $light;
+  }
+  .fa-quote-right {
+    font-size: 3em;
+  }
+  a {
+    transition: $ease;
+    color: $white;
+    letter-spacing: 2px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 0.9em;
+    margin: 15px 0;
+    text-decoration: underline;
+    &:hover {
+      background: $white;
+      color: $accent;
+    }
+  }
+}
+.quote {
+  font-family: $serif;
+  color: $white;
+  font-size: 2.5em;
+  font-weight: 200;
+  margin: 0;
+  span {
+    font-style: italic;
   }
 }
 
@@ -239,5 +288,50 @@ footer {
       background: $accent;
       color: $dark;
     }
+  }
+}
+
+/*background colors */
+.accent-bg {
+  background: $accent;
+}
+.light-bg {
+  background: $light;
+  .quote, a {
+    color: $main-dark;
+  }
+  i {
+    color: $accent;
+  }
+}
+.white-bg {
+  background: $white;
+}
+
+@media only screen and (max-width: 950px) {
+  .home-grid {
+    grid-gap: 10px;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .container {
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 655px) {
+  .home-grid {
+    margin: 40px 0 100px 0;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+  }
+  .home-grid-item {
+    height: 350px;
+    width: 350px;
+    justify-self: center;
+  }
+  .accent-line-center {
+    display: none;
   }
 }
