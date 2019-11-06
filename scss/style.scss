@@ -73,8 +73,8 @@ h3 {
 
 .bottom {
   position: absolute;
-  bottom: 0;
-  z-index: 1;
+  top: 767px;
+  z-index: 10;
   margin: 0;
 }
 
@@ -117,46 +117,53 @@ button {
 }
 
 .landing--container {
+  background-color: rgba($main, 1);
   position: relative;
   margin: 0;
-  background-color: #ecebec;
-  background-image: url('../img/harvey-bg2.jpg');
-  background-attachment: fixed;
-  background-position: -200px 0;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
   height: 100vh;
+  min-height: 765px;
   overflow: auto;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
+.landing--image {
+  position: absolute;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background-color: #ecebec;
+  background-image: url('../img/harvey-bg2.jpg');
+  // background-attachment: fixed;
+  background-position: -200px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .overlay {
-  background-color: rgba($main, .4);
+  background-color: rgba($main, .5);
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 0;
 }
 
 .landing--title {
+  position: absolute;
+  left: 45%;
   z-index: 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   h1 {
     text-transform: uppercase;
-    font-size: 5em;
+    font-size: 7em;
     letter-spacing: 5px;
     font-family: $serif;
     font-weight: 900;
-    color: $accent;
+    color: $white;
     margin: 0;
+    text-shadow: 5px 3px 5px rgba($dark, .2);
   }
   p {
     margin: 0 0 40px 0;
@@ -164,7 +171,12 @@ button {
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 1em;
+    font-size: .9em;
+    span {
+      background: $light;
+      padding: 4px;
+      line-height: 2.2em;
+    }
   }
 }
 
@@ -334,6 +346,14 @@ footer {
 }
 
 @media only screen and (max-width: 950px) {
+  .landing--image {
+    background-position: -270px 0;
+  }
+  .landing--title {
+    h1 {
+      font-size: 6.3em;
+    }
+  }
   .home-grid {
     grid-gap: 10px;
   }
@@ -345,7 +365,29 @@ footer {
   }
 }
 
-@media only screen and (max-width: 655px) {
+@media only screen and (max-width: 800px) {
+  .landing--title {
+    left: 40%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .landing--image {
+    width: 102%;
+    height: 45%;
+    top: 0;
+    background-position: -10px 0;
+  }
+  .landing--title {
+    left: 0;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
   .home-grid {
     margin: 40px 0 100px 0;
     grid-template-columns: 1fr;
@@ -358,5 +400,15 @@ footer {
   }
   .accent-line-center {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .landing--title {
+    margin: 0 auto;
+    h1 {
+      font-size: 5em;
+      letter-spacing: 3px;
+    }
   }
 }
