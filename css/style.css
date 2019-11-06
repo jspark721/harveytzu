@@ -14,6 +14,15 @@ em {
   font-size: .95em;
   text-transform: lowercase; }
 
+h3 {
+  color: #BCC7E2;
+  font-family: "Playfair Display", serif;
+  font-size: 1.7em;
+  font-weight: 800; }
+  h3 em {
+    color: #BAB0A9;
+    letter-spacing: 0; }
+
 #navbar {
   width: 100%;
   background: #f7f4f3;
@@ -58,7 +67,7 @@ button {
   button:hover {
     transform: scale(1.05); }
 
-.primary-btn {
+.btn-primary {
   background: #F6E7E0;
   color: #333333; }
 
@@ -189,6 +198,12 @@ button {
   margin: 0; }
   .quote span {
     font-style: italic; }
+
+.home-cta {
+  text-align: center; }
+
+.inline-buttons button {
+  margin-right: 10px; }
 
 footer {
   height: 20vh;

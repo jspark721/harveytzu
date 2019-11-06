@@ -34,6 +34,16 @@ em {
   font-size: .95em;
   text-transform: lowercase;
 }
+h3 {
+  color: $accent;
+  font-family: $serif;
+  font-size: 1.7em;
+  font-weight: 800;
+  em {
+    color: $main-dark;
+    letter-spacing: 0;
+  }
+}
 
 #navbar {
   width: 100%;
@@ -85,7 +95,7 @@ button {
     transform: scale(1.05);
   }
 }
-.primary-btn {
+.btn-primary {
   background: $light;
   color: $dark;
 }
@@ -243,6 +253,16 @@ button {
   margin: 0;
   span {
     font-style: italic;
+  }
+}
+
+.home-cta {
+  text-align: center;
+}
+
+.inline-buttons {
+  button {
+    margin-right: 10px;
   }
 }
 
