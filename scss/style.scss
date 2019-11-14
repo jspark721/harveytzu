@@ -23,10 +23,22 @@ $ease-slow: all .3s ease-out;
 body {
   font-family: $sans;
   margin: 0;
+  background: $white;
 }
 a {
   text-decoration: none;
   color: $main-dark;
+}
+
+p {
+  color: $dark;
+  font-weight: 300;
+}
+
+.p-caps {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 em {
@@ -53,8 +65,9 @@ h3 {
   background: rgba($white, 1);
   height: 70px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  box-shadow: 1px 1px 4px rgba($dark, .1);
   a {
     font-family: $sans;
     margin: 0 8%;
@@ -75,6 +88,13 @@ h3 {
 .bottom {
   position: absolute;
   top: 767px;
+  z-index: 10;
+  margin: 0;
+}
+
+.top {
+  position: fixed;
+  top: 0;
   z-index: 10;
   margin: 0;
 }
@@ -261,6 +281,7 @@ button {
   margin: 0;
   height: 300px;
   width: 100%;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -306,6 +327,90 @@ button {
   button {
     margin-right: 10px;
   }
+}
+
+
+// about page
+
+.page-about-hero {
+  width: 100%;
+  height: 400px;
+  background: $main;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  .p-caps {
+    color: $main-dark;
+  }
+}
+
+.page-about-main {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  min-height: 900px;
+  background: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 5%;
+}
+
+.image-container {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  margin: auto;
+}
+
+.about-title {
+  font-family: $serif;
+  color: $pink;
+  position: absolute;
+  left: 20%;
+  top: 12%;
+  font-weight: 800;
+  font-size: 3.5em;
+  margin: 0;
+  span {
+    padding-bottom: 10px;
+    border-bottom: 9px solid $main;
+  }
+}
+.about-main-image1 {
+  position: absolute;
+  right: 17%;
+  overflow: hidden;
+  width: 37%;
+  height: 45%;
+  border: 5px solid $pink;
+  background-image: url('../img/harvey-small.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.about-main-image2 {
+  position: absolute;
+  left: 12.5%;
+  top: 38%;
+  overflow: hidden;
+  width: 45%;
+  height: 58%;
+  border: 5px solid $main;
+  background-image: url('../img/harvey-happy.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba($light, .23);
 }
 
 footer {

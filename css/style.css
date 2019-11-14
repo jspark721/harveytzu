@@ -2,11 +2,21 @@
 /*potential colors*/
 body {
   font-family: "IBM Plex Sans", sans-serif;
-  margin: 0; }
+  margin: 0;
+  background: #F7F4F3; }
 
 a {
   text-decoration: none;
   color: #BAB0A9; }
+
+p {
+  color: #333333;
+  font-weight: 300; }
+
+.p-caps {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400; }
 
 em {
   font-family: "Playfair Display", serif;
@@ -30,8 +40,9 @@ h3 {
   background: #f7f4f3;
   height: 70px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center; }
+  box-shadow: 1px 1px 4px rgba(51, 51, 51, 0.1); }
   #navbar a {
     font-family: "IBM Plex Sans", sans-serif;
     margin: 0 8%;
@@ -49,6 +60,12 @@ h3 {
 .bottom {
   position: absolute;
   top: 767px;
+  z-index: 10;
+  margin: 0; }
+
+.top {
+  position: fixed;
+  top: 0;
   z-index: 10;
   margin: 0; }
 
@@ -212,6 +229,7 @@ button {
   margin: 0;
   height: 300px;
   width: 100%;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -248,6 +266,81 @@ button {
 
 .inline-buttons button {
   margin-right: 10px; }
+
+.page-about-hero {
+  width: 100%;
+  height: 400px;
+  background: #DBD0C7;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column; }
+  .page-about-hero .p-caps {
+    color: #BAB0A9; }
+
+.page-about-main {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  min-height: 900px;
+  background: #F7F4F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 5%; }
+
+.image-container {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  margin: auto; }
+
+.about-title {
+  font-family: "Playfair Display", serif;
+  color: #DBB3B1;
+  position: absolute;
+  left: 20%;
+  top: 12%;
+  font-weight: 800;
+  font-size: 3.5em;
+  margin: 0; }
+  .about-title span {
+    padding-bottom: 10px;
+    border-bottom: 9px solid #DBD0C7; }
+
+.about-main-image1 {
+  position: absolute;
+  right: 17%;
+  overflow: hidden;
+  width: 37%;
+  height: 45%;
+  border: 5px solid #DBB3B1;
+  background-image: url("../img/harvey-small.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.about-main-image2 {
+  position: absolute;
+  left: 12.5%;
+  top: 38%;
+  overflow: hidden;
+  width: 45%;
+  height: 58%;
+  border: 5px solid #DBD0C7;
+  background-image: url("../img/harvey-happy.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.image-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(246, 231, 224, 0.23); }
 
 footer {
   height: 20vh;
