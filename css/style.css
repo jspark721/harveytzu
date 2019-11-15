@@ -11,7 +11,8 @@ a {
 
 p {
   color: #333333;
-  font-weight: 300; }
+  font-weight: 300;
+  letter-spacing: .5px; }
 
 .p-caps {
   text-transform: uppercase;
@@ -281,10 +282,9 @@ button {
     color: #BAB0A9; }
 
 .page-about-main {
+  padding: 5% 0;
   position: relative;
   width: 100%;
-  height: 110vh;
-  min-height: 900px;
   background: #F7F4F3;
   display: flex;
   align-items: center;
@@ -294,15 +294,33 @@ button {
 
 .image-container {
   position: relative;
-  width: 90%;
+  width: 1000px;
   height: 80%;
   margin: auto; }
+
+.text-container {
+  margin-top: 35px;
+  width: 950px;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .text-container p {
+    line-height: 1.55em;
+    margin: 35px 0;
+    font-size: 0.93em; }
+
+.text-line {
+  width: 45px;
+  height: 5px;
+  background: #DBB3B1; }
 
 .about-title {
   font-family: "Playfair Display", serif;
   color: #DBB3B1;
   position: absolute;
-  left: 20%;
+  left: 19%;
   top: 12%;
   font-weight: 800;
   font-size: 3.5em;
@@ -312,35 +330,24 @@ button {
     border-bottom: 9px solid #DBD0C7; }
 
 .about-main-image1 {
-  position: absolute;
-  right: 17%;
+  margin-left: 45%;
+  margin-top: 40px;
   overflow: hidden;
-  width: 37%;
-  height: 45%;
-  border: 5px solid #DBB3B1;
+  height: 500px;
   background-image: url("../img/harvey-small.jpg");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat; }
 
 .about-main-image2 {
-  position: absolute;
-  left: 12.5%;
-  top: 38%;
   overflow: hidden;
-  width: 45%;
-  height: 58%;
-  border: 5px solid #DBD0C7;
+  margin-top: -250px;
+  width: 530px;
+  height: 600px;
   background-image: url("../img/harvey-happy.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
-
-.image-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(246, 231, 224, 0.23); }
 
 footer {
   height: 20vh;
