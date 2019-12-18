@@ -20,6 +20,10 @@ $green: #A9BAAC;
 $ease: all .3s ease;
 $ease-slow: all .3s ease-out;
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-family: $sans;
   margin: 0;
@@ -47,6 +51,12 @@ em {
   font-weight: 100;
   font-size: .95em;
   text-transform: lowercase;
+}
+
+h1 {
+  font-family: $serif;
+  color: $pink;
+  font-size: 3em;
 }
 h3 {
   color: $accent;
@@ -314,6 +324,7 @@ button {
   color: $white;
   font-size: 2.5em;
   font-weight: 200;
+  max-width: 900px;
   margin: 0;
   span {
     font-style: italic;
@@ -349,7 +360,6 @@ button {
 }
 
 .page-about-main {
-  padding: 5% 0;
   position: relative;
   width: 100%;
   background: $white;
@@ -362,14 +372,42 @@ button {
 
 .image-container {
   position: relative;
-  width: 1000px;
-  height: 80%;
+  display: flex;
+  width: 100vw;
+  height: 500px;
   margin: auto;
+}
+
+.overlay {
+  background: rgba($light, .3);
+  width: 100%;
+  height: 100%;
+}
+.about-main-image1 {
+  width: 50%;
+  background-image: url('../img/harvey-small.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.about-main-image2 {
+  width: 50%;
+  background-image: url('../img/harvey-happy.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.about-title {
+  text-align: center;
+  color: $pink;
+  margin-top: -50px;
 }
 
 .text-container {
   margin-top: 35px;
-  width: 950px;
+  padding: 50px;
+  max-width: 900px;
   text-align: justify;
   display: flex;
   justify-content: center;
@@ -380,6 +418,10 @@ button {
     margin: 35px 0;
     font-size: 0.93em;
   }
+  span {
+    margin: 0;
+    color: $main-dark;
+  }
 }
 .text-line {
   width: 45px;
@@ -387,50 +429,9 @@ button {
   background: $pink;
 }
 
-.about-title {
-  font-family: $serif;
-  color: $pink;
-  position: absolute;
-  left: 19%;
-  top: 12%;
-  font-weight: 800;
-  font-size: 3.5em;
-  margin: 0;
-  span {
-    padding-bottom: 10px;
-    border-bottom: 9px solid $main;
-  }
-}
-.about-main-image1 {
-  margin-left: 45%;
-  margin-top: 40px;
-  overflow: hidden;
-  height: 500px;
-  background-image: url('../img/harvey-small.jpg');
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-.about-main-image2 {
-  overflow: hidden;
-  margin-top: -250px;
-  width: 530px;
-  height: 600px;
-  background-image: url('../img/harvey-happy.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-// .image-overlay {
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-//   background: rgba($light, .23);
-// }
-
 footer {
   height: 20vh;
-  background: $white;
+  background: $light;
   position: relative;
   width: 100%;
   text-align: center;
